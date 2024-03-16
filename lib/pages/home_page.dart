@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String font = "fonts/Avenir-Light/Avenir-Light.ttf";
+  final String font = "monopsace";
 
   final List devices = [
     ["Light1", 'lib/icons/bulb.png', false],
