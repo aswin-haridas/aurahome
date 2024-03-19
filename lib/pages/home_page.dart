@@ -1,6 +1,7 @@
 import 'package:aurahome/util/devices_grid.dart';
 import 'package:flutter/material.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -8,8 +9,11 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+
 class _HomePageState extends State<HomePage> {
-  final String font = "monopsace";
+  bool isOn = false;
+  String temperature = "25°C";
+  String humidity = "50%";
 
   final List devices = [
     ["Light1", 'lib/icons/bulb.png', false],
@@ -24,8 +28,11 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
@@ -42,22 +49,20 @@ class _HomePageState extends State<HomePage> {
                       'lib/icons/menu.png',
                       height: 30,
                     ),
-                    Text(
+                    const Text(
                       'Bedroom',
-                      style: TextStyle(fontSize: 24, fontFamily: font),
+                      style: TextStyle(fontSize: 24),
                     ),
-                    Text(
+                    const Text(
                       'Livingroom',
                       style: TextStyle(
                           fontSize: 24,
-                          fontFamily: font,
                           color: Colors.black26),
                     ),
-                    Text(
+                    const Text(
                       'Kitchen',
                       style: TextStyle(
                           fontSize: 24,
-                          fontFamily: font,
                           color: Colors.black26),
                     ),
                   ],
@@ -69,10 +74,12 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('t', style: TextStyle(fontSize: 60, fontFamily: font)),
-                  Text('H', style: TextStyle(fontSize: 60, fontFamily: font)),
+                  Text(temperature, style: const TextStyle(fontSize: 60,)),
+                  Text(humidity, style: const TextStyle(fontSize: 60,)),
                 ],
               ),
+
+              
 
               const SizedBox(height: 40),
 

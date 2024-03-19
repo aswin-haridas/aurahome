@@ -4,7 +4,7 @@ class DevicesGrid extends StatelessWidget {
   final String deviceName;
   final String iconPath;
   final bool isOn;
-  final Function(bool)? onChanged;
+  final Function(bool) onChanged;
 
   const DevicesGrid({
     super.key,
@@ -22,9 +22,8 @@ class DevicesGrid extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: isOn? Colors.black : Colors.grey[200]
-        ),
+            borderRadius: BorderRadius.circular(30),
+            color: isOn ? Colors.black : Colors.grey[200]),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
@@ -34,18 +33,22 @@ class DevicesGrid extends StatelessWidget {
                   Image.asset(
                     iconPath,
                     height: 35,
-                    color: isOn? Colors.yellow : Colors.black87,
+                    color: isOn ? Colors.yellow : Colors.black87,
                   ),
                   const Spacer(),
-                  Switch(value: isOn,
-                   onChanged: onChanged,
-                   inactiveTrackColor: Colors.white,
-                  activeColor: Colors.grey,),
+                  Switch(
+                    value: isOn,
+                    onChanged: (status) {
+                      onChanged(status);
+                    },
+                    inactiveTrackColor: Colors.white,
+                    activeColor: Colors.grey,
+                  ),
                 ],
               ),
               Text(
                 deviceName,
-                style:TextStyle(color: isOn? Colors.white : Colors.black87) ,
+                style: TextStyle(color: isOn ? Colors.white : Colors.black87),
                 textAlign: TextAlign.left,
               ),
             ],
