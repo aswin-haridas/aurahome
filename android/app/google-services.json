@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "806737479808",
+    "firebase_url": "https://aura-1999-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "aura-1999",
+    "storage_bucket": "aura-1999.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806737479808:android:668bad2d391a92374ebe65",
+        "android_client_info": {
+          "package_name": "com.example.aurahome"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPX_DOhkvKIVCqnnswVzkULOuCSurzC6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

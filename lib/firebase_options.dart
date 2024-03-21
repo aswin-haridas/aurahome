@@ -44,42 +44,42 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBcmS-gecxZseH5ZsCfamWyyBKlhU-g3AU',
-    appId: '1:1087997266313:web:b57c5c06c93f36f87cf958',
-    messagingSenderId: '1087997266313',
-    projectId: 'aura-8266',
-    authDomain: 'aura-8266.firebaseapp.com',
-    databaseURL: 'https://aura-8266-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'aura-8266.appspot.com',
-    measurementId: 'G-ZSSQ413SGT',
+    apiKey: 'AIzaSyC5IadkGOuxglju8EgTSYb8GDoBnoEC7IY',
+    appId: '1:806737479808:web:f6a6a894d8ae9ef94ebe65',
+    messagingSenderId: '806737479808',
+    projectId: 'aura-1999',
+    authDomain: 'aura-1999.firebaseapp.com',
+    databaseURL: 'https://aura-1999-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'aura-1999.appspot.com',
+    measurementId: 'G-F5GVYMQ9XE',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBUW-xntfJfxYbaEZ6Fa6kpgg7SI1vXERs',
-    appId: '1:1087997266313:android:fd6d5e84396cb6937cf958',
-    messagingSenderId: '1087997266313',
-    projectId: 'aura-8266',
-    databaseURL: 'https://aura-8266-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'aura-8266.appspot.com',
+    apiKey: 'AIzaSyAPX_DOhkvKIVCqnnswVzkULOuCSurzC6o',
+    appId: '1:806737479808:android:668bad2d391a92374ebe65',
+    messagingSenderId: '806737479808',
+    projectId: 'aura-1999',
+    databaseURL: 'https://aura-1999-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'aura-1999.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCDxxOXYGHlOkZiozHEUixa9nP-XGFeZDg',
-    appId: '1:1087997266313:ios:bbefaf3d9219cdad7cf958',
-    messagingSenderId: '1087997266313',
-    projectId: 'aura-8266',
-    databaseURL: 'https://aura-8266-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'aura-8266.appspot.com',
-    iosBundleId: 'com.example.aura',
+    apiKey: 'AIzaSyCRBa2c2xaCUK7F8Ph-yaF8EqT8cLg2NzU',
+    appId: '1:806737479808:ios:8a1bcee12369c4fc4ebe65',
+    messagingSenderId: '806737479808',
+    projectId: 'aura-1999',
+    databaseURL: 'https://aura-1999-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'aura-1999.appspot.com',
+    iosBundleId: 'com.example.aurahome',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCDxxOXYGHlOkZiozHEUixa9nP-XGFeZDg',
-    appId: '1:1087997266313:ios:fcb2712dfe102cc17cf958',
-    messagingSenderId: '1087997266313',
-    projectId: 'aura-8266',
-    databaseURL: 'https://aura-8266-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'aura-8266.appspot.com',
-    iosBundleId: 'com.example.aura.RunnerTests',
+    apiKey: 'AIzaSyCRBa2c2xaCUK7F8Ph-yaF8EqT8cLg2NzU',
+    appId: '1:806737479808:ios:f75b4a2a7888bb4e4ebe65',
+    messagingSenderId: '806737479808',
+    projectId: 'aura-1999',
+    databaseURL: 'https://aura-1999-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'aura-1999.appspot.com',
+    iosBundleId: 'com.example.aurahome.RunnerTests',
   );
 }

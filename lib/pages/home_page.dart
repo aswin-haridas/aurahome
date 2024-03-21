@@ -1,4 +1,5 @@
 import 'package:aurahome/util/devices_grid.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,6 +12,10 @@ class HomePage extends StatefulWidget {
 
 
 class _HomePageState extends State<HomePage> {
+  late DatabaseReference _temperatureRef;
+  late DatabaseReference _humidityRef;
+  late DatabaseReference _lightsRef;
+  late DatabaseReference _fanRef;
   bool isOn = false;
   String temperature = "25°C";
   String humidity = "50%";
@@ -22,13 +27,68 @@ class _HomePageState extends State<HomePage> {
     ["fan", 'lib/icons/fan.png', false],
   ];
 
-  void powerSwtitchChanged(bool value, int index) {
+  void powerSwitchChanged(bool value, int index) {
     setState(() {
       devices[index][2] = value;
     });
+    if (index < 3) {
+      _lightsRef.child('light${index + 1}').set(value);
+    } else {
+      _fanRef.set(value);
+    }
   }
 
-  
+ @override
+    void initState() {
+    super.initState();
+    _temperatureRef = FirebaseDatabase.instance.ref().child('temperature');
+    _temperatureRef.onValue.listen((event) {
+      setState(() {
+        temperature = "${(double.tryParse(event.snapshot.value.toString()) ?? 0.0)
+                .toStringAsFixed(1)}°C";
+      });
+    });
+
+    _humidityRef = FirebaseDatabase.instance.ref().child('humidity');
+    _humidityRef.onValue.listen((event) {
+      setState(() {
+        humidity = "${(double.tryParse(event.snapshot.value.toString()) ?? 0.0)
+                .toStringAsFixed(1)}%";
+      });
+    });
+
+    _lightsRef = FirebaseDatabase.instance.ref().child('lights');
+    _lightsRef.onValue.listen((event) {
+      final Map lights = event.snapshot.value as Map;
+      for (int i = 1; i <= 3; i++) {
+        setState(() {
+          devices[i - 1][2] = lights['light$i'];
+        });
+      }
+        });
+
+    _fanRef = FirebaseDatabase.instance.ref().child('fan');
+    _fanRef.onValue.listen((event) {
+      final fan = event.snapshot.value;
+      if (fan != null) {
+        setState(() {
+          devices[3][2] = fan;
+        });
+      }
+    });
+  }
+
+
+  @override
+  void dispose() {
+    _temperatureRef.onDisconnect();
+    _humidityRef.onDisconnect();
+    _lightsRef.onDisconnect();
+    _fanRef.onDisconnect();
+    super.dispose();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                       deviceName: devices[index][0],
                       iconPath: devices[index][1],
                       isOn: devices[index][2],
-                      onChanged: (value) => powerSwtitchChanged(value, index),
+                      onChanged: (value) => powerSwitchChanged(value, index),
                     );
                   },
                 ),
