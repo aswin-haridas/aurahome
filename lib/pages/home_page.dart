@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage> {
 
     _lightsRef = FirebaseDatabase.instance.ref().child('lights');
     _lightsRef.onValue.listen((event) {
+      
       final Map lights = event.snapshot.value as Map;
       for (int i = 1; i <= 3; i++) {
         setState(() {
