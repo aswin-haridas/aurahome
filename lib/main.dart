@@ -1,32 +1,52 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:aurahome/firebase_options.dart';
 import 'package:aurahome/screens/home_page.dart';
+import 'package:aurahome/utils/app_constants.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 
-void main() async{
-  
+import 'firebase_options.dart';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-    );
+  );
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-    
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  
-  @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return MaterialApp(
+      title: 'AuraHome',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.primaries[AppConstants.primaryColor.value],
+        scaffoldBackgroundColor: AppConstants.backgroundLightColor,
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(
+            color: AppConstants.textColor,
+            fontSize: 16,
+          ),
+          bodyMedium: TextStyle(
+            color: AppConstants.textColor,
+            fontSize: 14,
+          ),
+          displayLarge: TextStyle(
+            color: AppConstants.textColor,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+          displayMedium: TextStyle(
+            color: AppConstants.textColor,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      home: const HomePage(),
     );
   }
 }
