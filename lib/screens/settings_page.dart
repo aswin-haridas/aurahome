@@ -1,5 +1,5 @@
-import 'package:aurahome/utils/app_constants.dart';
-import 'package:aurahome/widgets/settings_card.dart';
+import 'package:aurahomev1/utils/app_constants.dart';
+import 'package:aurahomev1/widgets/settings_card.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {

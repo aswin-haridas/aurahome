@@ -1,9 +1,9 @@
-import 'package:aurahome/models/home_data.dart';
-import 'package:aurahome/screens/settings_page.dart';
-import 'package:aurahome/utils/app_constants.dart';
-import 'package:aurahome/widgets/device_grid_item.dart';
-import 'package:aurahome/widgets/environment_info.dart';
-import 'package:aurahome/widgets/header.dart';
+import 'package:aurahomev1/models/home_data.dart';
+import 'package:aurahomev1/screens/settings_page.dart';
+import 'package:aurahomev1/utils/app_constants.dart';
+import 'package:aurahomev1/widgets/device_grid_item.dart';
+import 'package:aurahomev1/widgets/environment_info.dart';
+import 'package:aurahomev1/widgets/header.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

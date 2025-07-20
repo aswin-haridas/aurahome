@@ -1,4 +1,4 @@
-import 'package:aurahome/utils/app_constants.dart';
+import 'package:aurahomev1/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class EnvironmentInfo extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:aurahome/models/device.dart';
+import 'package:aurahomev1/models/device.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,7 @@ class HomeData extends ChangeNotifier {
   final DatabaseReference _humidityRef =
       FirebaseDatabase.instance.ref().child('humidity');
   final DatabaseReference _lightsRef =
-      FirebaseDatabase.instance.ref().child('lights');
+      FirebaseDatabase.instance.ref().child('top-outdoor-lights-4x');
   final DatabaseReference _fanRef = FirebaseDatabase.instance.ref().child('fan');
   final DatabaseReference _automationRef =
       FirebaseDatabase.instance.ref().child('automation');

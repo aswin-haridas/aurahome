@@ -1,5 +1,5 @@
-import 'package:aurahome/models/device.dart';
-import 'package:aurahome/utils/app_constants.dart';
+import 'package:aurahomev1/models/device.dart';
+import 'package:aurahomev1/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class DeviceGridItem extends StatelessWidget {
